@@ -1,4 +1,4 @@
-scan_network() {
+nmap_network() {
     # Aide
     if [[ "$1" == "-h" || "$1" == "--help" ]]; then
         cat <<EOF
@@ -45,9 +45,9 @@ EOF
 
     echo "[*] Scan des hôtes sur $range..."
     if [[ -n "$exclude" ]]; then
-        sudo nmap -sn "$range" --exclude "$exclude" -v -oA "$base"
+        sudo nmap -sn "$range" --exclude "$exclude" -v -oA "$base" | grep -v "\[host down\]"
     else
-        sudo nmap -sn "$range" -v -oA "$base"
+        sudo nmap -sn "$range" -v -oA "$base" | grep -v "\[host down\]"
     fi
 
     grep "Status: Up" "$base.gnmap" | awk '{print $2}' > "$hosts_file"
@@ -73,11 +73,10 @@ EOF
             mkdir -p "./$ip"
             echo "[+] $ip → ports ouverts : $found_ports"
             sudo nmap -p"$found_ports" -sC -sV "$ip" -oA "./$ip/nmap_$ip" -T4
-        else
-            echo "[-] $ip → aucun port ouvert trouvé"
         fi
     done < "$hosts_file" | tee all.nmap
 }
+
 
 nmapfull() {
   if [[ "$1" == "-h" || "$1" == "--help" ]]; then

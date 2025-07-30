@@ -1,3 +1,5 @@
 # nmap_functions
 
-source nmap_functions.sh
+```
+chmod +x init.sh; ./init.sh
+```
