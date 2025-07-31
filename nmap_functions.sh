@@ -92,6 +92,6 @@ nmapfull() {
   fi
 
   ip=$1
-  ports=$(sudo nmap -p- --min-rate=1000 -t4 $ip -Pn | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed 's/,$//')
+  ports=$(sudo nmap -p- --min-rate=1000 -T4 $ip -Pn | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed 's/,$//')
   sudo nmap -p$ports -sC -sV $ip -oA nmap_$ip -T4 -Pn
 }
