@@ -1,0 +1,23 @@
+# Nmap scan results
+nmap/
+
+# Text files (IP lists, results, etc.)
+*.txt
+
+# Nmap output files (if generated in root)
+*.nmap
+*.gnmap
+*.xml
+
+# Temporary files
+*.tmp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

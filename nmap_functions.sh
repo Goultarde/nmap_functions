@@ -6,9 +6,9 @@ Usage: nmap_network <ip_range|-s|--skip-discovery> [options]
 
 Arguments:
   ip_range                 IP range or CIDR. Ex: 192.168.0.0/24 or 192.168.0.10-192.168.0.50
-  -s, --skip-discovery     Skip host discovery. Any standalone IPs will be force scanned.
 
 Options:
+  -s, --skip-discovery     Skip host discovery. Any standalone IPs will be force scanned.
   -p, --ports <ports>           Specific ports (80,443,22) or range (20-1000). Default: all ports
   -e, --exclude <ips>           List of IPs to exclude, comma-separated
   -E, --exclude-file <file>     File containing IPs to exclude (one per line)
