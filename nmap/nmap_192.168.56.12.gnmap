@@ -1,4 +1,0 @@
-# Nmap 7.97 scan initiated Mon Aug 11 18:11:24 2025 as: nmap -p22,3389 -sC -sV -oA nmap/nmap_192.168.56.12 -T4 192.168.56.12
-Host: 192.168.56.12 (PANTHEON-ENFERS.pantheon.god)	Status: Up
-Host: 192.168.56.12 (PANTHEON-ENFERS.pantheon.god)	Ports: 22/open/tcp//ssh//OpenSSH for_Windows_9.5 (protocol 2.0)/, 3389/open/tcp//ms-wbt-server///
-# Nmap done at Mon Aug 11 18:11:37 2025 -- 1 IP address (1 host up) scanned in 12.71 seconds
