@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Mon Aug 11 18:11:24 2025 as: nmap -p22,3389 -sC -sV -oA nmap/nmap_192.168.56.12 -T4 192.168.56.12 -->
+<nmaprun scanner="nmap" args="nmap -p22,3389 -sC -sV -oA nmap/nmap_192.168.56.12 -T4 192.168.56.12" start="1754928684" startstr="Mon Aug 11 18:11:24 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="2" services="22,3389"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.12" addrtype="ipv4"/>
+<address addr="08:00:27:56:26:B4" addrtype="mac" vendor="Oracle VirtualBox virtual NIC"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1754928684" endtime="1754928697"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.12" addrtype="ipv4"/>
+<address addr="08:00:27:56:26:B4" addrtype="mac" vendor="Oracle VirtualBox virtual NIC"/>
+<hostnames>
+<hostname name="PANTHEON-ENFERS.pantheon.god" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="ssh" product="OpenSSH" version="for_Windows_9.5" extrainfo="protocol 2.0" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:for_windows_9.5</cpe></service></port>
+<port protocol="tcp" portid="3389"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="ms-wbt-server" servicefp="SF-Port3389-TCP:V=7.97%I=7%D=8/11%Time=689A1638%P=x86_64-pc-linux-gnu%r(TerminalServerCookie,13,&quot;\x03\0\0\x13\x0e\xd0\0\0\x124\0\x02/\x08\0\x02\0\0\0&quot;);" method="probed" conf="10"/><script id="rdp-ntlm-info" output="&#xa;  Target_Name: PANTHEON-ENFERS&#xa;  NetBIOS_Domain_Name: PANTHEON-ENFERS&#xa;  NetBIOS_Computer_Name: PANTHEON-ENFERS&#xa;  DNS_Domain_Name: pantheon-enfers&#xa;  DNS_Computer_Name: pantheon-enfers&#xa;  Product_Version: 10.0.26100&#xa;  System_Time: 2025-08-11T16:11:36+00:00"><elem key="Target_Name">PANTHEON-ENFERS</elem>
+<elem key="NetBIOS_Domain_Name">PANTHEON-ENFERS</elem>
+<elem key="NetBIOS_Computer_Name">PANTHEON-ENFERS</elem>
+<elem key="DNS_Domain_Name">pantheon-enfers</elem>
+<elem key="DNS_Computer_Name">pantheon-enfers</elem>
+<elem key="Product_Version">10.0.26100</elem>
+<elem key="System_Time">2025-08-11T16:11:36+00:00</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: commonName=pantheon-enfers&#xa;Not valid before: 2025-07-10T22:00:14&#xa;Not valid after:  2026-01-09T22:00:14"><table key="subject">
+<elem key="commonName">pantheon-enfers</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">pantheon-enfers</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">E8D52F37C27E5539AA2853DC80031B6FCD578A45868CF2B83A1450074A7EB8CE5E472FF050ED48B2B1EE2659F88DC164F7880D957247D7970C24F36116921ABD1145D9BD0C2C4947DA501BD4234ECC46C2591D7A6515C292852D862AEE79ACEB27AECD95F2DABEB2D66C7DEEE67261BACDFD99967ED9F3329F8653EBDCE11CE4AB7983EE1458D0D9F10906BE082901A73A8AA6B65115BB8965D3A2F09C645A362F5BC4178117D9FBC7960D8C1746BC9954B74EBC1D1BC39BE9A57DDBAEF32F2BD6DC38555E5A9F25E30CE9AF78D2F76373957A761497766C26FBD1E57FF73196AEDA89B7D28394D49D5EC1C17A2C0FA50FD982421561DBDAE332FAD836207211</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Key Encipherment, Data Encipherment</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2025-07-10T22:00:14</elem>
+<elem key="notAfter">2026-01-09T22:00:14</elem>
+</table>
+<elem key="md5">f3bc4f8cfe10a41381d8c203e9f466b5</elem>
+<elem key="sha1">324ddbc5b394c57953a5a06b8d392a6366882a25</elem>
+<elem key="sha256">d5ae2dde2b76fe428401a5d02b0446ba19755552ed0442eff3c43940dbf5fa3d</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIC4jCCAcqgAwIBAgIQQs8B9Zppz7FGtOf/L9q7rDANBgkqhkiG9w0BAQsFADAa&#xa;MRgwFgYDVQQDEw9wYW50aGVvbi1lbmZlcnMwHhcNMjUwNzEwMjIwMDE0WhcNMjYw&#xa;MTA5MjIwMDE0WjAaMRgwFgYDVQQDEw9wYW50aGVvbi1lbmZlcnMwggEiMA0GCSqG&#xa;SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDo1S83wn5VOaooU9yAAxtvzVeKRYaM8rg6&#xa;FFAHSn64zl5HL/BQ7Uiyse4mWfiNwWT3iA2VckfXlwwk82EWkhq9EUXZvQwsSUfa&#xa;UBvUI07MRsJZHXplFcKShS2GKu55rOsnrs2V8tq+stZsfe7mcmG6zf2Zln7Z8zKf&#xa;hlPr3OEc5Kt5g+4UWNDZ8QkGvggpAac6iqa2URW7iWXTovCcZFo2L1vEF4EX2fvH&#xa;lg2MF0a8mVS3TrwdG8Ob6aV9267zLyvW3DhVXlqfJeMM6a940vdjc5V6dhSXdmwm&#xa;+9Hlf/cxlq7aibfSg5TUnV7BwXosD6UP2YJCFWHb2uMy+tg2IHIRAgMBAAGjJDAi&#xa;MBMGA1UdJQQMMAoGCCsGAQUFBwMBMAsGA1UdDwQEAwIEMDANBgkqhkiG9w0BAQsF&#xa;AAOCAQEAg++bSx6/Km0tMujO8gaWKqkTm3EMG8Y2u3ey3jS26NbmhOp6b9Sj0gg3&#xa;mVyhN0HuOJu6xKfLvm+RrkSMbQikLd+Yb3Oe0aW5hrKpiwF5LuAhWGMJ+euqpIid&#xa;tKk1cv8un+JZA67IAKkYDNpUYL6j3Km6uIEkvaj0RqQoL2zmimXub1W9AUNZJows&#xa;CT+wDr0vKbdNNln16ulfIjvfoq9aYZbuaqRSZap3UWajFglUQDpSCCGBsglIrzQV&#xa;dGMIHgGYWAJO5NJIr/bxIG05mdDNJUQRLHEa2KhTpADcM5dCU4KFpBhON10XuGfw&#xa;DLnTIMQ4oUs32UcNN9wB2m4CvbZPjw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+</ports>
+<times srtt="211" rttvar="2872" to="100000"/>
+</host>
+<runstats><finished time="1754928697" timestr="Mon Aug 11 18:11:37 2025" summary="Nmap done at Mon Aug 11 18:11:37 2025; 1 IP address (1 host up) scanned in 12.71 seconds" elapsed="12.71" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
