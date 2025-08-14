@@ -168,6 +168,51 @@ EOF
     # Create nmap directory if it doesn't exist
     mkdir -p nmap
 
+    # Function to handle file conflicts
+    handle_file_conflict() {
+        local file_path="$1"
+        local file_type="$2"
+        
+        if [[ -f "$file_path" ]]; then
+            echo "[!] File $file_path already exists"
+            while true; do
+                read -p "Do you want to (o)verwrite, (r)ename existing, or (c)ancel? (o/r/c): " -n 1 -r
+                echo
+                case $REPLY in
+                    [Oo])
+                        echo "[*] Overwriting existing $file_type file"
+                        return 0
+                        ;;
+                    [Rr])
+                        local timestamp=$(date +"%Y%m%d_%H%M%S")
+                        local backup_file="${file_path}.backup_${timestamp}"
+                        mv "$file_path" "$backup_file"
+                        echo "[+] Existing $file_type file renamed to: $(basename "$backup_file")"
+                        return 0
+                        ;;
+                    [Cc])
+                        echo "[-] Operation cancelled"
+                        return 1
+                        ;;
+                    *)
+                        echo "Please answer o (overwrite), r (rename), or c (cancel)"
+                        ;;
+                esac
+            done
+        fi
+        return 0
+    }
+
+    # Check for existing hosts_up file
+    if ! handle_file_conflict "nmap/$hosts_file" "hosts list"; then
+        return 1
+    fi
+
+    # Check for existing all results file
+    if ! handle_file_conflict "nmap/$all_results" "results"; then
+        return 1
+    fi
+
     # Handle different discovery modes
     if [[ "$skip_discovery" == true ]]; then
         echo "[*] Skip-discovery mode enabled - no host discovery"
