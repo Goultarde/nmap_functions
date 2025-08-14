@@ -152,8 +152,18 @@ EOF
         echo "[*] Total IPs to force scan: $(echo "$force_ips" | tr ',' '\n' | wc -l)"
     fi
 
-    local hosts_scan="nmap_hosts"
-    local hosts_file="hosts_up.txt"
+    # Generate filenames based on network/mode
+    local network_name=""
+    if [[ "$skip_discovery" == true ]]; then
+        network_name="skip_discovery"
+    else
+        # Convert network range to filename-safe format
+        network_name=$(echo "$range" | sed 's/[\/:]/_/g' | sed 's/\./_/g')
+    fi
+    
+    local hosts_scan="nmap_hosts_$network_name"
+    local hosts_file="hosts_up_$network_name.txt"
+    local all_results="all_$network_name.nmap"
 
     # Create nmap directory if it doesn't exist
     mkdir -p nmap
@@ -223,7 +233,7 @@ EOF
             echo "[+] $ip → open ports: $found_ports"
             sudo nmap -p"$found_ports" -sC -sV "$ip" -oA "nmap/nmap_$ip" -T4
         fi
-    done < "nmap/$hosts_file" | tee nmap/all.nmap
+    done < "nmap/$hosts_file" | tee "nmap/$all_results"
 }
 
 
