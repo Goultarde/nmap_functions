@@ -176,9 +176,10 @@ EOF
         if [[ -f "$file_path" ]]; then
             echo "[!] File $file_path already exists"
             while true; do
-                read -p "Do you want to (o)verwrite, (r)ename existing, or (c)ancel? (o/r/c): " -n 1 -r
+                echo -n "Do you want to (o)verwrite, (r)ename existing, or (c)ancel? (o/r/c): "
+                read -n 1 choice
                 echo
-                case $REPLY in
+                case $choice in
                     [Oo])
                         echo "[*] Overwriting existing $file_type file"
                         return 0
